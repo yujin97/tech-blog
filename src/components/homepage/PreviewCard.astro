@@ -1,0 +1,25 @@
+---
+export interface Props {
+	title: string;
+	excerpt: string;
+	linkLabel?: string;
+}
+
+const { title, excerpt, linkLabel = "Read More" } = Astro.props;
+---
+
+<div class="rounded-lg border bg-card text-card-foreground shadow-sm">
+	<div class="flex flex-col space-y-1.5 p-6">
+		<h3
+			class="text-2xl font-semibold whitespace-nowrap leading-none tracking-tight"
+		>
+			{title}
+		</h3>
+	</div>
+	<div class="p-6">
+		{excerpt}
+	</div>
+	<div class="flex items-center p-6">
+		<a class="underline text-sm" href="#">{linkLabel}</a>
+	</div>
+</div>

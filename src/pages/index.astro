@@ -1,39 +1,19 @@
 ---
-import { Image } from "astro:assets";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import IntroductionSection from "../components/homepage/IntroductionSection.astro";
 import aboutMeImage from "../images/computer_programming_man.png";
+
+const aboutMeDescription = `I'm a web developer with a passion for creating beautiful and functional websites. With a background in computer science and several years of experience in the industry, I have a strong understanding of both the technical and aesthetic aspects of web development.`;
 ---
 
 <BaseLayout>
 	<main class="flex-1">
-		<section id="about" class="w-full py-12 md:py-24 lg:py-32">
-			<div class="container px-4 md:px-6">
-				<div class="grid gap-10 lg:grid-cols-2">
-					<div class="space-y-4">
-						<h2
-							class="text-3xl font-bold tracking-tighter sm:text-4xl"
-						>
-							About Me
-						</h2><p class="text-gray-500 dark:text-gray-400">
-							I'm a web developer with a passion for creating
-							beautiful and functional websites. With a background
-							in computer science and several years of experience
-							in the industry, I have a strong understanding of
-							both the technical and aesthetic aspects of web
-							development.
-						</p>
-					</div><div>
-						<Image
-							src={aboutMeImage}
-							width="400"
-							height="400"
-							alt="john doe"
-							class="aspect-square overflow-hidden rounded-lg object-cover"
-						/>
-					</div>
-				</div>
-			</div>
-		</section><section
+		<IntroductionSection
+			sectionTitle="About me"
+			description={aboutMeDescription}
+			image={aboutMeImage}
+		/>
+		<section
 			id="blog"
 			class="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800"
 		>
