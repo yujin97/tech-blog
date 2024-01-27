@@ -5,7 +5,7 @@ import aboutMeImage from "../images/computer_programming_man.png";
 import PreviewSection from "../components/homepage/PreviewSection.astro";
 
 const aboutMeDescription = `I'm a web developer with a passion for creating beautiful and functional websites. With a background in computer science and several years of experience in the industry, I have a strong understanding of both the technical and aesthetic aspects of web development.`;
-const previews = [
+const blogPreviews = [
 	{
 		title: "Blog Post 1",
 		excerpt:
@@ -22,6 +22,24 @@ const previews = [
 			"This is a brief excerpt from the third blog post. Click the link below to read more.",
 	},
 ];
+
+const projectPreview = [
+	{
+		title: "Project 1",
+		excerpt:
+			"This is a brief description of the first project. Click the link below to view more details.",
+	},
+	{
+		title: "Project 2",
+		excerpt:
+			"This is a brief description of the second project. Click the link below to view more details.",
+	},
+	{
+		title: "Project 3",
+		excerpt:
+			"This is a brief description of the third project. Click the link below to view more details.",
+	},
+];
 ---
 
 <BaseLayout>
@@ -31,71 +49,14 @@ const previews = [
 			description={aboutMeDescription}
 			image={aboutMeImage}
 		/>
-		<PreviewSection sectionTitle="Blog" previews={previews} />
-		<section id="projects" class="w-full py-12 md:py-24 lg:py-32">
-			<div class="container px-4 md:px-6">
-				<h2 class="text-3xl font-bold tracking-tighter sm:text-4xl">
-					Projects
-				</h2><div class="grid gap-6 mt-8 md:grid-cols-2 lg:grid-cols-3">
-					<div
-						class="rounded-lg border bg-card text-card-foreground shadow-sm"
-						data-v0-t="card"
-					>
-						<div class="flex flex-col space-y-1.5 p-6">
-							<h3
-								class="text-2xl font-semibold whitespace-nowrap leading-none tracking-tight"
-							>
-								Project 1
-							</h3>
-						</div><div class="p-6">
-							This is a brief description of the first project.
-							Click the link below to view more details.
-						</div><div class="flex items-center p-6">
-							<a class="underline text-sm" href="#">
-								View Details
-							</a>
-						</div>
-					</div><div
-						class="rounded-lg border bg-card text-card-foreground shadow-sm"
-						data-v0-t="card"
-					>
-						<div class="flex flex-col space-y-1.5 p-6">
-							<h3
-								class="text-2xl font-semibold whitespace-nowrap leading-none tracking-tight"
-							>
-								Project 2
-							</h3>
-						</div><div class="p-6">
-							This is a brief description of the second project.
-							Click the link below to view more details.
-						</div><div class="flex items-center p-6">
-							<a class="underline text-sm" href="#">
-								View Details
-							</a>
-						</div>
-					</div><div
-						class="rounded-lg border bg-card text-card-foreground shadow-sm"
-						data-v0-t="card"
-					>
-						<div class="flex flex-col space-y-1.5 p-6">
-							<h3
-								class="text-2xl font-semibold whitespace-nowrap leading-none tracking-tight"
-							>
-								Project 3
-							</h3>
-						</div><div class="p-6">
-							This is a brief description of the third project.
-							Click the link below to view more details.
-						</div><div class="flex items-center p-6">
-							<a class="underline text-sm" href="#">
-								View Details
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-	</main><footer class="flex h-20 w-full items-center px-4 md:px-6 border-t">
+		<PreviewSection
+			sectionTitle="Blog"
+			previews={blogPreviews}
+			isColored={true}
+		/>
+		<PreviewSection sectionTitle="Projects" previews={projectPreview} />
+	</main>
+	<footer class="flex h-20 w-full items-center px-4 md:px-6 border-t">
 		<p class="text-xs text-gray-500 dark:text-gray-400">
 			© 2024 Eugene Cheung. All rights reserved.
 		</p>

@@ -6,14 +6,16 @@ import PreviewCard, {
 export interface Props {
 	sectionTitle: string;
 	previews: Array<PreviewCardProps>;
+	isColored?: boolean;
 }
 
-const { sectionTitle, previews } = Astro.props;
+const { sectionTitle, previews, isColored = false } = Astro.props;
+const colorStyle = isColored ? "bg-gray-100 dark:bg-gray-800" : "";
 ---
 
 <section
 	id={sectionTitle}
-	class="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800"
+	class={`w-full py-12 md:py-24 lg:py-32 ${colorStyle}`}
 >
 	<div class="container px-4 md:px-6">
 		<h2 class="text-3xl font-bold tracking-tighter sm:text-4xl">
