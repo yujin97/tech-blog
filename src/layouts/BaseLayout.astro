@@ -1,5 +1,8 @@
 ---
 import Navigation from "../components/navigation/Navigation.astro";
+import Footer from "../components/Footer.astro";
+
+const footerLabel = "© 2024 Eugene Cheung. All rights reserved.";
 ---
 
 <div class="flex flex-col min-h-screen">
@@ -7,4 +10,5 @@ import Navigation from "../components/navigation/Navigation.astro";
 		<Navigation />
 	</header>
 	<slot />
+	<Footer label={footerLabel} />
 </div>

@@ -1,0 +1,13 @@
+---
+export interface Props {
+	label: string;
+}
+
+const { label } = Astro.props;
+---
+
+<footer class="flex h-20 w-full items-center px-4 md:px-6 border-t">
+	<p class="text-xs text-gray-500 dark:text-gray-400">
+		{label}
+	</p>
+</footer>
