@@ -2,10 +2,11 @@
 export interface Props {
 	title: string;
 	excerpt: string;
+	targetUrl: string;
 	linkLabel?: string;
 }
 
-const { title, excerpt, linkLabel = "Read More" } = Astro.props;
+const { title, excerpt, targetUrl, linkLabel = "Read More" } = Astro.props;
 ---
 
 <div class="rounded-lg border bg-card text-card-foreground shadow-sm">
@@ -20,6 +21,6 @@ const { title, excerpt, linkLabel = "Read More" } = Astro.props;
 		{excerpt}
 	</div>
 	<div class="flex items-center p-6">
-		<a class="underline text-sm" href="#">{linkLabel}</a>
+		<a class="underline text-sm" href={targetUrl}>{linkLabel}</a>
 	</div>
 </div>

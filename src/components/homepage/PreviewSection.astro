@@ -1,15 +1,26 @@
 ---
-import PreviewCard, {
-	type Props as PreviewCardProps,
-} from "./PreviewCard.astro";
+import PreviewCard from "./PreviewCard.astro";
 
 export interface Props {
 	sectionTitle: string;
-	previews: Array<PreviewCardProps>;
+	previews: Array<Preview>;
+	targetPath?: string;
 	isColored?: boolean;
 }
 
-const { sectionTitle, previews, isColored = false } = Astro.props;
+interface Preview {
+	title: string;
+	excerpt: string;
+	slug?: string;
+	linkLabel?: string;
+}
+
+const {
+	sectionTitle,
+	previews,
+	targetPath = "/",
+	isColored = false,
+} = Astro.props;
 const colorStyle = isColored ? "bg-gray-100 dark:bg-gray-800" : "";
 ---
 
@@ -28,6 +39,7 @@ const colorStyle = isColored ? "bg-gray-100 dark:bg-gray-800" : "";
 						title={preview.title}
 						excerpt={preview.excerpt}
 						linkLabel={preview.linkLabel}
+						targetUrl={`${targetPath}${preview.slug || ""}`}
 					/>
 				))
 			}

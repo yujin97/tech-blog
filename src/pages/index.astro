@@ -1,27 +1,20 @@
 ---
+import { getCollection } from "astro:content";
+
 import BaseLayout from "../layouts/BaseLayout.astro";
 import IntroductionSection from "../components/homepage/IntroductionSection.astro";
 import aboutMeImage from "../images/computer_programming_man.png";
 import PreviewSection from "../components/homepage/PreviewSection.astro";
 
 const aboutMeDescription = `I'm a web developer with a passion for creating beautiful and functional websites. With a background in computer science and several years of experience in the industry, I have a strong understanding of both the technical and aesthetic aspects of web development.`;
-const blogPreviews = [
-	{
-		title: "Blog Post 1",
-		excerpt:
-			"This is a brief excerpt from the first blog post. Click the link below to read more.",
-	},
-	{
-		title: "Blog Post 2",
-		excerpt:
-			"This is a brief excerpt from the second blog post. Click the link below to read more.",
-	},
-	{
-		title: "Blog Post 3",
-		excerpt:
-			"This is a brief excerpt from the third blog post. Click the link below to read more.",
-	},
-];
+const blogPosts = await getCollection("blogPosts");
+const blogPreviews = blogPosts.map(
+	({ data: { title, description }, slug }) => ({
+		title,
+		excerpt: description,
+		slug,
+	}),
+);
 
 const projectPreview = [
 	{
@@ -52,6 +45,7 @@ const projectPreview = [
 		<PreviewSection
 			sectionTitle="Blog"
 			previews={blogPreviews}
+			targetPath="/blog-posts/"
 			isColored={true}
 		/>
 		<PreviewSection sectionTitle="Projects" previews={projectPreview} />
