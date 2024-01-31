@@ -1,10 +1,17 @@
 ---
 import NavigationButton from "./NavigationButton.astro";
 
-const navigationItems = ["About", "Blog", "Projects"];
+const navigationItems = [
+	{ label: "About", url: "/about/" },
+	{ label: "Blog", url: "/blog/" },
+	{ label: "Projects", url: "/projects/" },
+];
 ---
 
 <nav class="hidden lg:flex gap-6">
-	{navigationItems.map((item) => <NavigationButton label={item} />)}
+	{
+		navigationItems.map(({ label, url }) => (
+			<NavigationButton label={label} url={url} />
+		))
+	}
 </nav>
-
