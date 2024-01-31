@@ -22,11 +22,12 @@ const {
 	isColored = false,
 } = Astro.props;
 const colorStyle = isColored ? "bg-gray-100 dark:bg-gray-800" : "";
+const textColor = isColored ? "text-gray-800 dark:text-gray-100" : "";
 ---
 
 <section
 	id={sectionTitle}
-	class={`w-full py-12 md:py-24 lg:py-32 ${colorStyle}`}
+	class={`w-full py-12 md:py-24 lg:py-32 ${colorStyle} ${textColor}`}
 >
 	<div class="container px-4 md:px-6">
 		<h2 class="text-3xl font-bold tracking-tighter sm:text-4xl">
