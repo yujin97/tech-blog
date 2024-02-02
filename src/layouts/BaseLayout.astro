@@ -2,13 +2,36 @@
 import Navigation from "../components/navigation/Navigation.astro";
 import Footer from "../components/Footer.astro";
 
+export interface Props {
+	pageTitle: string;
+}
+
 const footerLabel = "© 2024 Eugene Cheung. All rights reserved.";
+
+const { pageTitle } = Astro.props;
 ---
 
-<div class="flex flex-col min-h-screen">
-	<header class="flex h-20 w-full items-center px-4 md:px-6">
-		<Navigation />
-	</header>
-	<slot />
-	<Footer label={footerLabel} />
-</div>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{pageTitle}</title>
+		<style>
+			h1 {
+				color: purple;
+				font-size: 4rem;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="flex flex-col min-h-screen">
+			<header class="flex h-20 w-full items-center px-4 md:px-6">
+				<Navigation />
+			</header>
+			<slot />
+			<Footer label={footerLabel} />
+		</div>
+	</body>
+</html>

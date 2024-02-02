@@ -4,9 +4,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Post from "../components/blog/Post.astro";
 
 const blogEntries = await getCollection("blogPosts");
+const pageTitle = "Blog";
 ---
 
-<BaseLayout>
+<BaseLayout pageTitle={pageTitle}>
 	<div class="flex flex-col min-h-screen">
 		<header class="flex items-center justify-between px-4 py-2 border-b">
 			<a class="text-xl font-bold" href="#">Blog</a>
