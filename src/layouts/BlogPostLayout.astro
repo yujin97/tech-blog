@@ -1,4 +1,5 @@
 ---
+import Prose from "../components/Prose.astro";
 export interface Props {
 	frontmatter: {
 		title: string;
@@ -20,24 +21,30 @@ const tags = frontmatter.tags;
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
-	<p>{frontmatter.pubDate.toString()}</p>
-	<p transition:animate={fade({ duration: "2s" })}>
-		<em>{frontmatter.description}</em>
-	</p>
-	<p>Written by <a href="/about/">{frontmatter.author}</a></p>
-	<img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
+	<Prose>
+		<p>{frontmatter.pubDate.toString()}</p>
+		<p transition:animate={fade({ duration: "2s" })}>
+			<em>{frontmatter.description}</em>
+		</p>
+		<p>Written by <a href="/about/">{frontmatter.author}</a></p>
+		<img
+			src={frontmatter.image.url}
+			width="300"
+			alt={frontmatter.image.alt}
+		/>
 
-	<div class="tags">
-		{
-			tags.map((tag) => (
-				<p class="tag">
-					<a href={`/tags/${tag}`}>{tag}</a>
-				</p>
-			))
-		}
-	</div>
+		<div class="tags">
+			{
+				tags.map((tag) => (
+					<p class="tag">
+						<a href={`/tags/${tag}`}>{tag}</a>
+					</p>
+				))
+			}
+		</div>
 
-	<slot />
+		<slot />
+	</Prose>
 </BaseLayout>
 
 <style>
@@ -59,4 +66,3 @@ const tags = frontmatter.tags;
 		background-color: #f8fcfd;
 	}
 </style>
-
