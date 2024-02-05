@@ -6,7 +6,8 @@ import IntroductionSection from "../components/homepage/IntroductionSection.astr
 import aboutMeImage from "../images/computer_programming_man.png";
 import PreviewSection from "../components/homepage/PreviewSection.astro";
 
-const aboutMeDescription = `I'm a web developer with a passion for creating beautiful and functional websites. With a background in computer science and several years of experience in the industry, I have a strong understanding of both the technical and aesthetic aspects of web development.`;
+const aboutMeDescription = `
+Hello, I'm a seasoned full stack web developer with four years of professional experience, holding a Computer Science degree from The University of Hong Kong. Proficient in JavaScript and TypeScript, I seamlessly navigate both frontend and backend development. My enthusiasm for technology extends to exploring languages like Rust. In my free time, I enjoy experimenting with various technologies, constantly broadening my skill set. Having dedicated over two years to web development in Hong Kong, I recently relocated to Tokyo, eager to contribute my expertise and continue evolving in this dynamic field.`;
 const blogPosts = await getCollection("blogPosts");
 const blogPreviews = blogPosts.map(
 	({ data: { title, description }, slug }) => ({
