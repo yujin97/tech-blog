@@ -8,10 +8,10 @@ export function Hamburger() {
   }
   return (
     <>
-      <div className="block" onClick={onClick}>
+      <div class="block" onClick={onClick}>
         Open the menu
       </div>
-      {isOpen() && <div className="block">options</div>}
+      {isOpen() && <div class="block">options</div>}
     </>
   );
 }
