@@ -19,7 +19,7 @@ export function MenuItems(props: Props) {
 
   return (
     <div
-      class="pt-32 shadow-lg shadow-white/50 bg-slate-200/80 h-lvh w-full -translate-x-full flex flex-col pl-12 ease-in-out duration-500 text-center list-none"
+      class="pt-32 shadow-lg shadow-white/50 bg-slate-200/80 h-lvh w-full -translate-x-full flex flex-col ease-in-out duration-500 text-center list-none"
       classList={classList()}
     >
       {others.items.map((item) => (
