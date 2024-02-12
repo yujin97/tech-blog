@@ -1,7 +1,6 @@
 ---
-import Navigation from "../components/navigation/Navigation.astro";
+import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import { Hamburger } from "../components/hamburger/Hamburger";
 
 export interface Props {
 	pageTitle: string;
@@ -28,10 +27,7 @@ const { pageTitle } = Astro.props;
 	</head>
 	<body>
 		<div class="flex flex-col min-h-screen bg-neutral-100">
-			<header class="flex h-20 w-full items-center px-4 md:px-6">
-				<Navigation />
-			</header>
-			<Hamburger client:load />
+			<Header />
 			<slot />
 			<Footer label={footerLabel} />
 		</div>
