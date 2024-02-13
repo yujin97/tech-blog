@@ -7,11 +7,9 @@ const blogEntries = await getCollection("blogPosts");
 const pageTitle = "Blog";
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout pageTitle={pageTitle} withTitle>
 	<div class="flex flex-col min-h-screen">
-		<header class="flex items-center justify-between px-4 py-2 border-b">
-			<a class="text-xl font-bold" href="#">Blog</a>
-		</header><main class="flex-1 py-8 px-4 md:px-6 lg:px-8">
+		<main class="flex-1 py-8 px-4 md:px-6 lg:px-8">
 			<section class="mb-8">
 				<h2 class="text-2xl font-bold mb-4">Recent Posts</h2><div
 					class="grid gap-4 md:grid-cols-2 lg:grid-cols-3"
