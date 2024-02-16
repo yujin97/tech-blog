@@ -15,13 +15,13 @@ export function MenuItems(props: Props) {
 
   const classList = () => ({
     "translate-x-0": reactive.isOpen,
-    "w-lvw": reactive.isOpen,
+    "w-dvw": reactive.isOpen,
     "w-0": !reactive.isOpen,
   });
 
   return (
     <div
-      class="absolute -left-4 pt-32 shadow-lg shadow-white/50 bg-slate-200/80 h-lvh overflow-hidden flex flex-col ease-in-out duration-500 text-center list-none md:-left-6"
+      class="fixed top-20 inset-x-0 pt-32 shadow-lg shadow-white/50 bg-slate-200/80 h-dvh overflow-hidden flex flex-col ease-in-out duration-500 text-center list-none"
       classList={classList()}
     >
       {others.items.map((item) => (
