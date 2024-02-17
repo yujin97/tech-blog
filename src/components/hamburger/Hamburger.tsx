@@ -12,7 +12,7 @@ export function Hamburger(props: Props) {
 
   return (
     <>
-      <div class="fixed lg:hidden z-10" onClick={others.onClick}>
+      <div class="fixed lg:hidden" onClick={others.onClick}>
         <div class="h-6 w-9 flex flex-col justify-between">
           <HamburgerLine isOpen={reactive.isOpen} lineNumber={1} />
           <HamburgerLine isOpen={reactive.isOpen} lineNumber={2} />
