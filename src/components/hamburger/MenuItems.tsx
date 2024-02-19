@@ -25,8 +25,10 @@ export function MenuItems(props: Props) {
       classList={classList()}
     >
       {others.items.map((item) => (
-        <li class="mb-1 text-2xl font-medium list-image-none hover:font-bold hover:text-3xl">
-          <a href={item.url}>{item.label}</a>
+        <li class="mb-1 text-2xl font-medium list-image-none">
+          <a class="hover:font-bold hover:text-3xl" href={item.url}>
+            {item.label}
+          </a>
         </li>
       ))}
     </div>
