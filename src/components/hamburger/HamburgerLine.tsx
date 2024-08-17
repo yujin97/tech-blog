@@ -3,8 +3,9 @@ interface Props {
   isOpen: boolean;
 }
 export function HamburgerLine(props: Props) {
+  const { lineNumber } = props;
   const classList = () => {
-    const { isOpen, lineNumber } = props;
+    const isOpen = props.isOpen;
     return {
       "rotate-35": isOpen && lineNumber === 1,
       "scale-y-0": isOpen && lineNumber === 2,
